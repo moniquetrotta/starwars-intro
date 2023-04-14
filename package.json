@@ -1,0 +1,51 @@
+{
+  "name": "starwars-intro",
+  "version": "1.0.0",
+  "description": "Desenvolvimento da Intro do Star Wars com deploy no Azure.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint --ext .js -f ./node_modules/eslint-friendly-formatter . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moniquetrotta/starwars-intro.git"
+  },
+  "keywords": [
+    "nodejs",
+    "azure",
+    "javascript",
+    "express"
+  ],
+  "author": "Monique Trotta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moniquetrotta/starwars-intro/issues"
+  },
+  "homepage": "https://github.com/moniquetrotta/starwars-intro#readme",
+  "dependencies": {
+    "eslint-friendly-formatter": "^4.0.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-vue": "^9.10.0",
+    "husky": "^8.0.3",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1"
+  },
+  "husky": {
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run lint"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
